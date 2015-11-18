@@ -1,0 +1,24 @@
+minUnits 15
+maxUnits 20
+
+
+register Win2015
+register Spr2015
+
+taken STATS116
+taken CS106B
+taken CS107
+taken CS109
+taken CS147
+taken CS221
+taken MATH51
+taken JAPANLNG14A
+
+request CS110 in Spr2015
+request ECON160 in Win2015
+request JAPANLNG14B in Win2015 weight 2
+request PHIL81 or PHIL100 in Win2015
+request PSYCH50 in Win2015
+request CS247 or CS231A in Win2015
+request OSPKYOTO21K in Spr2015
+request OSPKYOTO17R in Spr2015

@@ -1,0 +1,52 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage,enumitem,amsmath,amssymb,graphicx}
+
+\begin{document}
+
+\begin{center}
+{\Large CS221 Fall 2014 Homework Six}
+
+\begin{tabular}{rl}
+\\ 
+SUNet ID: rolfom01 \\
+Name: Mathieu Rolfo \\
+Collaborators: Nathan Tindall, Shalom Rottman-Yang \\
+\end{tabular}
+\end{center}
+
+By turning in this assignment, I agree by the Stanford honor code and declare
+that all of this is my own work.
+
+\section*{Problem 0}
+
+\begin{enumerate}[label=(\alph*)]
+  \item Here is one constraint satisfaction problem that represent our lightbulb problem. (m variables and n constraints) Our variables $X_1, X_2, ..., X_m$ are the $m$ buttons, where Domain = $\{0, 1\}$. This represents, for a proposed solution, whether the buttons have been pressed or not.The n constraints are $f_i(x)$ = [$bulb_i = 1$ or $i \in T_j $ for some $j\notin x$] This is equivalent to saying that for any assignment, or partial assignment, each light must either be on, or be able to be turned on by a button that hasn't been pressed yet.  
+   \item i: There are two consistent assignments: $\{X_1 = 0, X_2 = 1, X_3 = 0\} $ and $ \{X_1 = 1, X_2 = 0, X_3 = 0\}$. \\
+   	ii: If we use the fixed ordering $X_1, X_2, X_3$, backtrack() will be called seven times. If we use the ordering $X_1, X_3, X_2$, backtrack() will be called eleven times. 
+	iii: Using arc-consistency on the ordering $X_1, X_2, X_3$, we call backtrack() four times.
+  
+ \end{enumerate}
+ 
+\section*{Problem 2}
+
+\begin{enumerate}[label=(\alph*)]
+  \item To reduce this CSP to one with only unary constraints, introduce auxiliary variables $A_1, A_2, A_3$. Each auxiliary variable has a value of an input, output pair. For each auxiliary variable, we have the following constraints:\\
+  Potential 0: [$A_1(1) = 0$] \\
+  Potential 1: [$A_i(2) = A_i(1) + X_i$] \\
+  Potential 2: [$A_i(2) = A_{i+1}(1)$]\\
+  Potential 3: [$A_3(2) \leq 6$] \\
+  This scheme works because it ensures that the final value is less than six, the output value of a tuple is the input value of the successor tuple, and the output value of a tuple is the input value of the tuple, plus the value of the variable it is assisting. The domains are: $A_1 = \{(0, range(0,2))\}, A_2 = \{(range(0, 2), range(0, 4)\}, A_3 = \{(range(0, 4), range(0, 6))\}$.
+  
+\end{enumerate}
+
+section*{Problem 3}
+
+\begin{enumerate}[label=(\alph*)]
+\item
+\item
+\item
+\item Looks like I know what I'm taking this year! The scheduler worked out. I guess the best solution was picked by simple tie-breaking.
+
+\end{enumerate}
+
+\end{document}
